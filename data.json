@@ -1,0 +1,52 @@
+[
+      {
+        "EnrollmentID": 1,
+        "ProgressPercentage": 25,
+        "UserUserID": 1
+      },
+      {
+        "EnrollmentID": 2,
+        "ProgressPercentage": 75,
+        "UserUserID": 2
+      },
+      {
+        "EnrollmentID": 3,
+        "ProgressPercentage": 10,
+        "UserUserID": 3
+      },
+      {
+        "EnrollmentID": 4,
+        "ProgressPercentage": 50,
+        "UserUserID": 4
+      },
+      {
+        "EnrollmentID": 5,
+        "ProgressPercentage": 90,
+        "UserUserID": 5
+      },
+      {
+        "EnrollmentID": 6,
+        "ProgressPercentage": 35,
+        "UserUserID": 6
+      },
+      {
+        "EnrollmentID": 7,
+        "ProgressPercentage": 100,
+        "UserUserID": 7
+      },
+      {
+        "EnrollmentID": 8,
+        "ProgressPercentage": 60,
+        "UserUserID": 8
+      },
+      {
+        "EnrollmentID": 9,
+        "ProgressPercentage": 15,
+        "UserUserID": 9
+      },
+      {
+        "EnrollmentID": 10,
+        "ProgressPercentage": 70,
+        "UserUserID": 10
+      }
+    ]

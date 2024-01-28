@@ -46,11 +46,11 @@ TrainingEnrollmentModel(sequelize);
 // Para relacionarlos hacemos un destructuring
 const { Notification,TrainingEnrollment,User } = sequelize.models;
 // Define associations
-TrainingEnrollment.belongsTo(User);
-Notification.belongsTo(User);
-User.hasMany(TrainingEnrollment);
-User.hasMany(Notification);
+TrainingEnrollment.belongsToMany(User, { through: 'UserTrainingEnrollment' });
+User.belongsToMany(TrainingEnrollment, { through: 'UserTrainingEnrollment' });
 
+Notification.belongsToMany(User, { through: 'UserNotification' });
+User.belongsToMany(Notification, { through: 'UserNotification' });
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');

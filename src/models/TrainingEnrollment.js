@@ -7,11 +7,13 @@ module.exports = (sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    ProgressStatus: {
-      type: DataTypes.STRING,
+    ProgressPercentage: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        min: 0,
+        max: 100,
+      },
     },
   });
-
-  return TrainingEnrollment;
 };

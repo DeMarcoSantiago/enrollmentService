@@ -18,11 +18,14 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
+const fillDB = require('./src/controllers/FIllDB.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(80, () => {
     console.log('EnrollmentService listening at 80'); // eslint-disable-line no-console
+
+    fillDB()
   });
 });

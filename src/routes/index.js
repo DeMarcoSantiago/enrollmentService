@@ -6,9 +6,9 @@ const enrollmentRoutes = require("./enrollmentRoutes")
 // Ejemplo: const authRouter = require('./auth.js');
 const router = Router();
 
-router.use("/users", userRoutes)
-router.use("/notifications", notificationRoutes)
-router.use("/enrollment", enrollmentRoutes)
+router.use("/", userRoutes)
+router.use("/", notificationRoutes)
+router.use("/", enrollmentRoutes)
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
