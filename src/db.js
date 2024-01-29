@@ -46,6 +46,11 @@ TrainingEnrollmentModel(sequelize);
 // Para relacionarlos hacemos un destructuring
 const { Notification,TrainingEnrollment,User } = sequelize.models;
 // Define associations
+
+TrainingEnrollment.belongsTo(User);
+Notification.belongsTo(User);
+User.hasMany(TrainingEnrollment);
+User.hasMany(Notification);
 TrainingEnrollment.belongsToMany(User, { through: 'UserTrainingEnrollment' });
 User.belongsToMany(TrainingEnrollment, { through: 'UserTrainingEnrollment' });
 

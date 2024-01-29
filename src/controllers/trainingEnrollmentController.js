@@ -68,19 +68,24 @@ const updateTrainingEnrollment = async (req, res, next) => {
 };
 
 const deleteTrainingEnrollment = async (req, res, next) => {
-  const { id } = req.params;
+  const { enrollmentId } = req.params; // Change id to enrollmentId
 
   try {
-    const existingTrainingEnrollment = await TrainingEnrollment.findByPk(id);
+    console.log('Deleting training enrollment with ID:', enrollmentId);
+    
+    const existingTrainingEnrollment = await TrainingEnrollment.findByPk(enrollmentId);
 
     if (!existingTrainingEnrollment) {
+      console.log('Training enrollment not found:', enrollmentId);
       return res.status(404).json({ error: 'Training Enrollment not found' });
     }
 
     await existingTrainingEnrollment.destroy();
 
+    console.log('Training enrollment deleted successfully:', enrollmentId);
     res.json({ message: 'Training Enrollment deleted successfully' });
   } catch (error) {
+    console.error('Error deleting training enrollment:', error);
     next(error);
   }
 };
