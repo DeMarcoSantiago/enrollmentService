@@ -6,6 +6,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT } = process.env;
 const UserModel = require('./models/user');
 const NotificationModel = require("./models/Notification")
 const TrainingEnrollmentModel = require("./models/TrainingEnrollment")
+const { DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize(
   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/USERS_DB`,
@@ -45,6 +46,20 @@ TrainingEnrollmentModel(sequelize);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
 const { Notification,TrainingEnrollment,User } = sequelize.models;
+const UserNotification = sequelize.define(
+  "UserNotification",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+    },
+  },
+  {
+    timestamps: false,
+  }
+);
 // Define associations
 
 TrainingEnrollment.belongsTo(User);
